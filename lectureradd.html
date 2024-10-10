@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Upload Page</title>
+    <link rel="stylesheet" href="adding.css">
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault();  // Prevent actual form submission
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>University Attendance</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <h2>Add Lecturer</h2>
+        <form id="lecturerForm" onsubmit="showSuccessMessage(event)">
+            <label for="lecturer-name">Lecturer Name:</label>
+            <input type="text" id="lecturer-name" name="lecturer-name" required><br><br>
+            
+            <label for="lecturer-email">Lecturer Email:</label>
+            <input type="email" id="lecturer-email" name="lecturer-email" required><br><br>
+            
+            <label for="temp-password">Temporary Password:</label>
+            <input type="password" id="temp-password" name="temp-password" required><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+        <p id="success-message" style="display: none; color: green;">Done!</p>
+    </div>
+</body>
+</html>

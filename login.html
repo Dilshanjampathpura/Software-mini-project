@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>University Attendance</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="hidden" id="loginType" name="type">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Get the login type from URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const loginType = urlParams.get('type');
+        document.getElementById('loginType').value = loginType;
+
+        // Add event listener to the form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Get username and password from the form inputs
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if login type is admin
+            if (loginType === 'admin') {
+                // Check username and password
+                if (username === 'ADMIN' && password === '12345') {
+                    alert('Login successful! Redirecting to admin dashboard.');
+                    window.location.href = 'adminmodes.html'; // Redirect to admin dashboard
+                } else {
+                    alert('Wrong username or password!');
+                }
+            } 
+            // Check if login type is lecturer
+            else if (loginType === 'lecturer') {
+                // Check username and password
+                if (username === 'LECTURER' && password === '12345') {
+                    alert('Login successful! Redirecting to lecturer dashboard.');
+                    window.location.href = 'lecturerdashboard.html'; // Redirect to admin dashboard
+                } else {
+                    alert('Wrong username or password!');
+                }
+            }
+            // Check if login type is student
+            else if  (loginType === 'student') {
+                // Check username and password
+                if (username === 'STUDENT' && password === '12345') {
+                    alert('Login successful! Redirecting to student dashboard.');
+                    window.location.href = 'studentdashboard.html'; // Redirect to admin dashboard
+                } else {
+                    alert('Wrong username or password!');
+                }
+            }
+            else {
+                alert('Wrong username or password!');
+            }
+        });
+    </script>
+</body>
+</html>

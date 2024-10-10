@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="in-login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>University Attendance</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <h2>Assign Lecturer to Subject</h2>
+        <form action="/assign-subject" method="POST">
+            <div class="form-group">
+                <label for="lecturer">Select Lecturer:</label>
+                <select id="lecturer" name="lecturer">
+                    <option value="lecturer1">Lecturer 1</option>
+                    <option value="lecturer2">Lecturer 2</option>
+                    <option value="lecturer3">Lecturer 3</option>
+                    <option value="lecturer4">Lecturer 4</option>
+                    <option value="lecturer5">Lecturer 5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="subject">Select Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="subject1">Subject 1</option>
+                    <option value="subject2">Subject 2</option>
+                    <option value="subject3">Subject 3</option>
+                    <option value="subject4">Subject 4</option>
+                    <option value="subject5">Subject 5</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Assign</button>
+        </form>
+    </div>
+</body>
+</html>

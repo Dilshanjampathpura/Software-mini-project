@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Dashboard</title>
+    <link rel="stylesheet" href="in-login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>University Attendance</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Lecturer Dashboard</h1>
+        <h2>Take Attendance</h2>
+        <form action="submit-attendance" method="POST">
+            <div class="form-group">
+                <label for="subject">Select Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="subject1">Subject 1</option>
+                    <option value="subject2">Subject 2</option>
+                </select>
+            </div>
+            <h3>Mark Attendance</h3>
+            <div class="form-group">
+                <input type="checkbox" id="student1" name="student1">
+                <label for="student1">Student 1</label><br>
+                <input type="checkbox" id="student2" name="student2">
+                <label for="student2">Student 2</label><br>
+            </div>
+            <button type="submit" class="btn">Submit Attendance</button>
+        </form>
+    </div>
+</body>
+</html>
